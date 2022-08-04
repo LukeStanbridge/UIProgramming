@@ -27,4 +27,14 @@ public class ActionList : MonoBehaviour
         _actions = actions.ToArray();
         onChanged.Invoke();
     }
+
+    [ContextMenu("Duplicate Action")]
+    void DuplicateAction()
+    {
+        List<Action> actions = new List<Action>(_actions);
+        int randomNum = Random.Range(0, 3);
+        actions.Add(actions[randomNum]);
+        _actions = actions.ToArray();
+        onChanged.Invoke();
+    }
 }
