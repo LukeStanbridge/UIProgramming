@@ -6,14 +6,11 @@ using UnityEngine.UI;
 public class SettingsUI : MonoBehaviour
 {
     public Settings settings;
-    public GameObject menu;
     public FloatEditor musicVolume;
     public FloatEditor fxVolume;
 
     public Slider musicVolume1;
     public Slider fxVolume1;
-
-    public Toggle stereo;
 
     private void Start()
     {
@@ -28,14 +25,6 @@ public class SettingsUI : MonoBehaviour
                 settings.musicVolume = value;
             });
         }
-    }
-
-    public void Toggle()
-    {
-        gameObject.SetActive(!gameObject.activeSelf);
-        musicVolume1.value = settings.musicVolume;
-        fxVolume1.value = settings.soundFxVolume;
-        menu.SetActive(true);
     }
 
     public void OnMusicVolumeChanged(float volume)

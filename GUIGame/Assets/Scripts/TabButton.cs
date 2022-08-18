@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     public TabGroup tabGroup;
-    public Color background;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -28,13 +27,6 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     // Start is called before the first frame update
     void Start()
     {
-        background = GetComponent<Image>().color;
         tabGroup.Subscribe(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

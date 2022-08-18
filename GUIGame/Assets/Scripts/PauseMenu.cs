@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public PlayerMovement playerMovement;
 
     [Header("Pause Child Components")]
     public GameObject pauseMenu;
-    public GameObject pauseSettings;
-    public GameObject pauseInstructions;
+    public TabGroup tabGroup;
 
     // Update is called once per frame
     void Update()
@@ -38,14 +37,6 @@ public class PauseMenu : MonoBehaviour
                 Resume();
                 break;
 
-            case "How To Play":
-                HowToPlay();
-                break;
-
-            case "Settings":
-                Settings();
-                break;
-
             case "Exit Game":
                 ExitGame();
                 break;
@@ -56,8 +47,6 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         pauseMenu.SetActive(false);
-        pauseSettings.SetActive(false);
-        pauseInstructions.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
         playerMovement.enabled = true;
@@ -69,23 +58,12 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         pauseMenu.SetActive(true);
+        tabGroup.OnClosePauseMenu();
         Time.timeScale = 0f;
         GameIsPaused = true;
         playerMovement.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
-
-    void Settings()
-    {
-        pauseMenu.SetActive(false);
-        pauseSettings.SetActive(true);
-    }
-
-    void HowToPlay()
-    {
-        pauseMenu.SetActive(false);
-        pauseInstructions.SetActive(true);
     }
 
     public void ExitGame()
