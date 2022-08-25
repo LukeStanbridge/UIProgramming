@@ -8,11 +8,15 @@ using UnityEngine.EventSystems;
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     public TabGroup tabGroup;
+    public float tweenTime;
+    public float tweenSize;
+    RectTransform rectTransform;
 
     // Initiates button control when dragging mouse over tab or selecting tab 
     public void OnPointerClick(PointerEventData eventData)
     {
         tabGroup.OnTabSelected(this);
+        Tween();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -29,5 +33,17 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     void Start()
     {
         tabGroup.Subscribe(this);
+        tweenTime = 1f;
+        tweenSize = 1.5f;
+        rectTransform = GetComponent<RectTransform>();  
+    }
+
+    public void Tween()
+    {
+        if (GetComponentInParent<FlexibleGridLayout>() == null) rectTransform.SetAsLastSibling();
+        LeanTween.cancel(gameObject);
+        transform.localScale = Vector3.one;
+        LeanTween.scale(gameObject, Vector3.one * tweenSize, tweenTime).setEasePunch();
+        
     }
 }
