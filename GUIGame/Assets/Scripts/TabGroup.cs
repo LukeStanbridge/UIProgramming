@@ -55,7 +55,7 @@ public class TabGroup : MonoBehaviour
                 option.MainMenuOption(button.name);
                 panelGroup.SetPageIndex(panelNumber);
             }
-            // controls thh panel display for the to[ tab bar
+            // controls thh panel display for the to tab bar
             else
             {
                 panelGroup.SetPageIndex(tabButtons.IndexOf(button));

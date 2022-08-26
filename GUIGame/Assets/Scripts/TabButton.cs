@@ -22,6 +22,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         tabGroup.OnTabEnter(this);
+        Tween();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -33,17 +34,18 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     void Start()
     {
         tabGroup.Subscribe(this);
-        tweenTime = 1f;
-        tweenSize = 1.5f;
+        tweenTime = 0.5f;
+        tweenSize = 1.3f;
         rectTransform = GetComponent<RectTransform>();  
     }
 
     public void Tween()
     {
-        if (GetComponentInParent<FlexibleGridLayout>() == null) rectTransform.SetAsLastSibling();
+        if (gameObject.transform.parent.name == "Tabs") rectTransform.SetAsLastSibling(); // pop tab to front if parent has no flexible grid layout script
+
         LeanTween.cancel(gameObject);
         transform.localScale = Vector3.one;
-        LeanTween.scale(gameObject, Vector3.one * tweenSize, tweenTime).setEasePunch();
+        LeanTween.scale(gameObject, Vector3.one * tweenSize, tweenTime).setEasePunch().setIgnoreTimeScale(true);
         
     }
 }

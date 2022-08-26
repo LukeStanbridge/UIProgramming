@@ -21,6 +21,10 @@ public class PanelGroup : MonoBehaviour
             if (i == panelIndex)
             {
                 panels[i].gameObject.SetActive(true);
+                if (tabGroup.name == "Menu")
+                {
+                    TweenPanelOpen();
+                }
             }
             else panels[i].gameObject.SetActive(false);
         }
@@ -30,5 +34,12 @@ public class PanelGroup : MonoBehaviour
     {
         panelIndex = index;
         ShowCurrentPanel();
+    }
+
+    public void TweenPanelOpen()
+    {
+        LeanTween.cancel(gameObject);
+        transform.localScale = Vector3.zero;
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.3f).setIgnoreTimeScale(true);
     }
 }

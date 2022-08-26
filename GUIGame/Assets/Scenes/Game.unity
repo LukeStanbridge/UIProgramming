@@ -2833,6 +2833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &4956023734370527981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3117,6 +3119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &4956023734426971822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5226,6 +5230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!114 &4956023735109264464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5916,6 +5922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &4956023735396549211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6629,7 +6637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4956023735751271376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7087,6 +7095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &4956023735871927542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7786,6 +7796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!222 &4956023736082700427
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8610,6 +8622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &4956023736201843445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9047,6 +9061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabGroup: {fileID: 4956023734625948397}
+  tweenTime: 0
+  tweenSize: 0
 --- !u!224 &5056634165792550158
 RectTransform:
   m_ObjectHideFlags: 0
